@@ -74,3 +74,4 @@ vim.g.clipboard = {
 vim.g.have_nerd_font = true   -- Indica que o terminal tem uma Nerd Font instalada (útil para plugins)
 
 require("keymaps")
+require("plugins.treesitter")
