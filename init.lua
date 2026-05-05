@@ -75,3 +75,5 @@ vim.g.have_nerd_font = true   -- Indica que o terminal tem uma Nerd Font instala
 
 require("keymaps")
 require("plugins.treesitter")
+require("plugins.mini")
+require("plugins.nvim-lspconfig")
