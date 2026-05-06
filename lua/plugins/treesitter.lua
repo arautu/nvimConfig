@@ -1,21 +1,23 @@
 ---@module 'nvim-treesitter'
 ---
 --- Configuração modular do nvim-treesitter usando vim.pack (Neovim 0.12+)
---- Documentação: :h pack | https://github.com/nvim-treesitter/nvim-treesitter
+--- Documentação: :h nvim-treesitter | https://github.com/nvim-treesitter/nvim-treesitter
 
 -- ============================================================================
 -- 1. Hook para atualizar os analisadores (parsers) do tree-sitter
 -- ============================================================================
-vim.api.nvim_create_autocmd('PackChanged', { callback = function(ev)
-  local name, kind = ev.data.spec.name, ev.data.kind
-  if name == 'nvim-treesitter' and kind == 'update' then
-    if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
-    vim.cmd('TSUpdate')
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == 'nvim-treesitter' and kind == 'update' then
+      if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
+      vim.cmd('TSUpdate')
+    end
   end
-end })
+})
 
 -- ============================================================================
--- 2. Registro do plugin via vim.pack (experimental, mas estável)
+-- 2. Registro do plugin via vim.pack
 -- ============================================================================
 vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
