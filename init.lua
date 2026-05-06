@@ -28,7 +28,13 @@ vim.opt.listchars = {        -- Define símbolos para espaços, tabs e NBSP
 vim.g.ui2 = true             -- Interface experimental na versão 0.12
 
 -- ============================================================================
--- 4. Comportamento de edição
+-- 5. Quebra de linha visual (wrap)
+-- ============================================================================
+vim.o.wrap = true            -- Quebra de linha visual.
+vim.o.textwidth = 100        -- Quebra de linha visual.
+
+-- ============================================================================
+-- 6. Comportamento de edição
 -- ============================================================================
 vim.o.tabstop = 2            -- Número de espaços que um <Tab> ocupa na tela
 vim.o.shiftwidth = 2         -- Número de espaços usado para indentação automática (>>, <<, ==)
@@ -44,14 +50,14 @@ vim.o.splitright = true      -- Novas divisões verticais abrem à direita
 vim.o.splitbelow = true      -- Novas divisões horizontais abrem abaixo
 
 -- ============================================================================
--- 5. Busca e substituição
+-- 7. Busca e substituição
 -- ============================================================================
 vim.o.ignorecase = true      -- Busca case-insensitive por padrão
 vim.o.smartcase = true       -- Ignora 'ignorecase' se o padrão contiver letras maiúsculas
 vim.o.inccommand = "split"   -- Mostra preview ao vivo para substituições (:%s/...)
 
 -- ============================================================================
--- 6. Área de transferência (clipboard) – específico para WSL
+-- 8. Área de transferência (clipboard) – específico para WSL
 -- ============================================================================
 vim.o.clipboard = "unnamedplus"   -- Usa o registro "+" para yank/paste (compartilha com sistema)
 -- Configuração personalizada para usar clip.exe no WSL
@@ -69,7 +75,7 @@ vim.g.clipboard = {
 }
 
 -- ============================================================================
--- 7. Flags e recursos opcionais
+-- 9. Flags e recursos opcionais
 -- ============================================================================
 vim.g.have_nerd_font = true   -- Indica que o terminal tem uma Nerd Font instalada (útil para plugins)
 
@@ -77,3 +83,5 @@ require("keymaps")
 require("plugins.treesitter")
 require("plugins.mini")
 require("plugins.nvim-lspconfig")
+require("plugins.which-key")
+require("plugins.telescope")

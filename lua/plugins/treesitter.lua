@@ -27,9 +27,37 @@ vim.pack.add({
 require('nvim-treesitter').install { 'lua', 'vim', 'vimdoc', 'markdown', 'bash' }
 
 -- ============================================================================
--- 4. Highlighting
+-- 4. Destaques (Highlighting)
 -- ============================================================================
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { '<filetype>' },
-  callback = function() vim.treesitter.start() end,
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
+
+-- ============================================================================
+-- 5. Dobras (Folds)
+-- ============================================================================
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*' },
+  callback = function()
+    if vim.treesitter.language.get_lang(vim.bo.filetype) then
+      vim.wo.foldmethod = 'expr'
+      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      vim.wo.foldlevel = 99
+    end
+  end,
+})
+
+-- ============================================================================
+-- 6. INDENTAÇÃO (EXPERIMENTAL)
+-- ============================================================================
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*' },
+  callback = function()
+    if vim.treesitter.language.get_lang(vim.bo.filetype) then
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
+  end,
 })
