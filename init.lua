@@ -31,7 +31,6 @@ vim.g.ui2 = true             -- Interface experimental na versão 0.12
 -- 5. Quebra de linha visual (wrap)
 -- ============================================================================
 vim.o.wrap = true            -- Quebra de linha visual.
-vim.o.textwidth = 100        -- Quebra de linha visual.
 
 -- ============================================================================
 -- 6. Comportamento de edição
@@ -85,3 +84,4 @@ require("plugins.mini")
 require("plugins.nvim-lspconfig")
 require("plugins.which-key")
 require("plugins.telescope")
+require("plugins.oil")
