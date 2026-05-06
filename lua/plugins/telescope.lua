@@ -12,6 +12,8 @@ vim.pack.add({
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
 })
 
+require('telescope').load_extension('fzf')
+
 -- ============================================================================
 -- 2. Teclas de atalho 
 -- ============================================================================
