@@ -5,7 +5,6 @@ vim.pack.add({
 
 vim.cmd.colorscheme('miniwinter')
 
-require('mini.basics').setup()
 require('mini.surround').setup()
 require('mini.statusline').setup()
 require('mini.pairs').setup()

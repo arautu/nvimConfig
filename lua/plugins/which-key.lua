@@ -22,10 +22,4 @@ wk.setup({
 
 wk.add({
   { "<leader>f", group = "file" }, -- group
-  { "<leader>w", proxy = "<c-w>", group = "windows" }, -- proxy to window mappings
-  {
-    mode = { "n", "v" }, -- NORMAL and VISUAL mode
-    { "<leader>q", "<cmd>q<cr>", desc = "Quit" }, -- no need to specify mode since it's inherited
-    { "<leader>w", "<cmd>w<cr>", desc = "Write" },
-  }
 })
