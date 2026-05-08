@@ -110,6 +110,20 @@ Com os comandos padrão, é possível usar as funções de servidor de linguagem
 `[e` e `]e`   Navegar entre erros
 `[w` e `]w`   Navegar entre avisos
 
+## Inteligência artificial
+
+Utilizas-se o plugin codecompanion para criar um entrosamento entre modelos de I.A. e o neovim.
+
+### Comandos úteis
+
+```
+:CodeCompanionChat
+/file
+/fork
+```
+2. Para selecionar múltiplos arquivos, use <tab>.
+3. Duplica a janela de contexto. Use '}' ou '{' para trocar de janela, ou <C-c> para fechar.
+
 ## O que falta:
 * Instalação do config. Buscar o jeito usado no projeto kickstart.
 * Comandos do lsp.

@@ -26,7 +26,7 @@ vim.pack.add({
 -- ============================================================================
 -- 3. Setup do nvim-treesitter
 -- ============================================================================
-require('nvim-treesitter').install { 'lua', 'vim', 'vimdoc', 'markdown', 'bash' }
+require('nvim-treesitter').install { 'lua', 'vim', 'vimdoc', 'markdown', 'bash', 'yaml' }
 
 -- ============================================================================
 -- 4. Destaques (Highlighting)
