@@ -16,10 +16,10 @@ vim.pack.add({
 })
 
 -- ============================================================================
--- 2. Adaptador ollama
+-- 2. Adaptador ollama cloud
 -- ============================================================================
 local api_key = os.getenv("OLLAMA_API_KEY")
-local adapter = require("codecompanion.adapters").extend("ollama", {
+local ollama_cloud = require("codecompanion.adapters").extend("ollama", {
   name = "ollama_cloud",
   env = {
     url = "https://ollama.com",
@@ -36,11 +36,36 @@ local adapter = require("codecompanion.adapters").extend("ollama", {
 })
 
 -- ============================================================================
--- 3. Setup
+-- 3. Adaptador ollama local
+-- ============================================================================
+local ollama_local = require("codecompanion.adapters").extend("ollama", {
+  name = "ollama_local",
+  env = {
+    url = "http://localhost:11434",
+  },
+  schema = {
+    model = { default = "gpt-oss:20b" },
+  },
+})
+
+-- ============================================================================
+-- 4. Setup
 -- ============================================================================
 require("codecompanion").setup({
   strategies = {
-    chat = { adapter = adapter },
-    inline = { adapter = adapter },
+    chat = {
+      adapter = ollama_cloud,
+      adapters = {
+        ollama_local,
+        ollama_cloud,
+      },
+    },
+    inline = {
+      adapter = ollama_cloud,
+      adapters = {
+        ollama_local,
+        ollama_cloud,
+      },
+    },
   },
 })

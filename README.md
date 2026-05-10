@@ -112,7 +112,7 @@ Com os comandos padrão, é possível usar as funções de servidor de linguagem
 
 ## Inteligência artificial
 
-Utilizas-se o plugin codecompanion para criar um entrosamento entre modelos de I.A. e o neovim.
+O CodeCompanion integra assistência de IA ao Neovim, oferecendo chat interativo, edição inline de código e automação de tarefas via workflows.
 
 ### Comandos úteis
 
@@ -120,9 +120,19 @@ Utilizas-se o plugin codecompanion para criar um entrosamento entre modelos de I
 :CodeCompanionChat
 /file
 /fork
+`ga`
 ```
 2. Para selecionar múltiplos arquivos, use <tab>.
-3. Duplica a janela de contexto. Use '}' ou '{' para trocar de janela, ou <C-c> para fechar.
+3. Duplica a janela de contexto. Use '}' ou '{' para trocar de janela, ou <C-c> para fechá-la.
+4. Escolher outro adaptador.
+
+### Interação inline
+
+1. Selecione as linhas do arquivo.
+2. `:CodeCompanion`
+3. Lance o prompt.
+4. Se estiver pedindo uma edição, use  `g1`, `g2` ou `g3` para aceitar/rejeitar a sugestão.
+5. `q` cancela a requisição
 
 ## O que falta:
 * Instalação do config. Buscar o jeito usado no projeto kickstart.
