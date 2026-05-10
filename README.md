@@ -2,6 +2,36 @@
 
 Neste repositório encontra-se as minhas configurações para o editor de texto neovim ≥ 0.12. Ela caracteriza-se por ser simplista, poucos plugins com foco mais generalista.
 
+## Instalação
+
+### Método 1: Substituir a configuração padrão
+
+Clone este repositório diretamente para o diretório de configuração do Neovim:
+
+```bash
+git clone https://github.com/arautu/nvimConfig.git ~/.config/nvim
+```
+
+**Atenção**: Isso substituirá qualquer configuração existente no ~/.config/nvim. Se deseja manter sua configuração atual, use o Método 2.
+
+### Método 2: Usar alias
+
+Mantenha sua configuração atual intacta e instale esta configuração separadamente usando a variável de ambiente **NVIM_APPNAME**.
+
+Clone o repositório para um diretório à sua escolha, por exemplo:
+
+```bash
+git clone https://github.com/arautu/nvimConfig.git ~/.config/nvim-nviconfig
+```
+Adicione o seguinte alias ao seu arquivo de configuração do shell (~/.bashrc):
+
+```bash
+alias nviconfig='NVIM_APPNAME="nvim-nviconfig" nvim'
+```
+Recarregue o shell para que o alias tenha efeito.
+
+Agora você pode executar nviconfig no terminal para usar esta configuração. O Neovim lerá os arquivos de ~/.config/nvim-nviconfig e armazenará dados (swap, undo, state) em ~/.local/state/nvim-nviconfig/, sem interferir na instalação padrão.
+
 ## Clipboard
 
 A configuração do clipboard considera que o sistema linux está rodando no WSL da microsoft. Caso seja apenas linux, remova completamente o parâmetro **vim.g.clipboard**.
@@ -117,14 +147,21 @@ O CodeCompanion integra assistência de IA ao Neovim, oferecendo chat interativo
 ### Comandos úteis
 
 ```
-:CodeCompanionChat
-/file
-/fork
 `ga`
 ```
+1. Escolher outro adaptador.
+
+### Chat
+
+```
+:CodeCompanionChat
+<C-s>
+/file
+/fork
+```
+2. Envia o prompt.
 2. Para selecionar múltiplos arquivos, use <tab>.
 3. Duplica a janela de contexto. Use '}' ou '{' para trocar de janela, ou <C-c> para fechá-la.
-4. Escolher outro adaptador.
 
 ### Interação inline
 
