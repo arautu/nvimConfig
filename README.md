@@ -139,38 +139,3 @@ Com os comandos padrão, é possível usar as funções de servidor de linguagem
 `[d` e `]d`   Navegar entre diagnósticos (erros, avisos)
 `[e` e `]e`   Navegar entre erros
 `[w` e `]w`   Navegar entre avisos
-
-## Inteligência artificial
-
-O CodeCompanion integra assistência de IA ao Neovim, oferecendo chat interativo, edição inline de código e automação de tarefas via workflows.
-
-### Comandos úteis
-
-```
-`ga`
-```
-1. Escolher outro adaptador.
-
-### Chat
-
-```
-:CodeCompanionChat
-<C-s>
-/file
-/fork
-```
-2. Envia o prompt.
-2. Para selecionar múltiplos arquivos, use <tab>.
-3. Duplica a janela de contexto. Use '}' ou '{' para trocar de janela, ou <C-c> para fechá-la.
-
-### Interação inline
-
-1. Selecione as linhas do arquivo.
-2. `:CodeCompanion`
-3. Lance o prompt.
-4. Se estiver pedindo uma edição, use  `g1`, `g2` ou `g3` para aceitar/rejeitar a sugestão.
-5. `q` cancela a requisição
-
-## O que falta:
-* Instalação do config. Buscar o jeito usado no projeto kickstart.
-* Comandos do lsp.
