@@ -171,6 +171,6 @@ O CodeCompanion integra assistência de IA ao Neovim, oferecendo chat interativo
 4. Se estiver pedindo uma edição, use  `g1`, `g2` ou `g3` para aceitar/rejeitar a sugestão.
 5. `q` cancela a requisição
 
-## O que falta:
-* Instalação do config. Buscar o jeito usado no projeto kickstart.
-* Comandos do lsp.
+## Linucom
+
+Para acesso facilitado as colas de comandos de programas, vá no arquivo telescope.lua e corrija o caminho para a pasta linucom.

@@ -21,5 +21,7 @@ wk.setup({
 })
 
 wk.add({
-  { "<leader>f", group = "file" }, -- group
+  { "<leader>f", group = "File" }, -- group
+  { "<leader>l", group = "LSP" }, -- group
+  { "<leader>p", group = "Pack" }, -- group
 })

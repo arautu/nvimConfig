@@ -11,7 +11,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   {
     src = "https://www.github.com/olimorris/codecompanion.nvim",
-    version = vim.version.range("^19.0.0")
+    -- version = vim.version.range("^19.0.0")
   }
 })
 

@@ -27,3 +27,7 @@ vim.keymap.set('n', '<leader>fc', builtin.current_buffer_fuzzy_find, { desc = 'F
 vim.keymap.set('n', '<leader>fn', function() builtin.find_files({ cwd = vim.fn.stdpath('config') }) end, {
   desc = 'Search Neovim files'
 })
+
+vim.keymap.set('n', '<leader>fl', function() builtin.find_files({ cwd = vim.fn.expand('~/linucom') }) end, {
+  desc = 'Search linucom files'
+})
