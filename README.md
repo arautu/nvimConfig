@@ -139,3 +139,7 @@ Com os comandos padrão, é possível usar as funções de servidor de linguagem
 `[d` e `]d`   Navegar entre diagnósticos (erros, avisos)
 `[e` e `]e`   Navegar entre erros
 `[w` e `]w`   Navegar entre avisos
+
+## Linucom
+
+Para acesso facilitado as colas de comandos de programas, vá no arquivo telescope.lua e corrija o caminho para a pasta linucom.

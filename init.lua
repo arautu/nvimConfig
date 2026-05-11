@@ -87,7 +87,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- ============================================================================
--- 9. Flags e recursos opcionais
+-- 10. Mapeamento de teclas
+-- ============================================================================
+vim.keymap.set('n', '<leader>pu', vim.pack.update, { desc = 'Update Plugins' })
+
+-- ============================================================================
+-- 11. Flags e recursos opcionais
 -- ============================================================================
 vim.g.have_nerd_font = true -- Indica que o terminal tem uma Nerd Font instalada (útil para plugins)
 
